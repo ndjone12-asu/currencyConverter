@@ -28,7 +28,7 @@ export default {
       //this.amount = 0;
     },
     subtractBalance() {
-      if (this.amount < this.balance) {
+      if (this.amount <= this.balance) {
         this.balance -= this.amount;
         this.$emit('newBal', this.balance);
       } else {
@@ -48,9 +48,13 @@ export default {
   <div class="greetings">
     <h3>{{ balanceString }}</h3>
     <h3>Amount: {{ amount }} {{ currencyTypeProp }}</h3>
+ 
     <input type="range" v-model.number="amount" min="5" max="100" step="5" />
+  
+    <br />
     <button @click="addBalance">Add</button>
     <button @click="subtractBalance">Subtract</button>
+    <br />
   </div>
 </template>
 
@@ -75,5 +79,9 @@ h3 {
   .greetings h3 {
     text-align: left;
   }
+}
+
+input[type="range"] {
+  width: 200px;
 }
 </style>

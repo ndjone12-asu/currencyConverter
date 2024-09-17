@@ -48,13 +48,13 @@ header {
 }
 
 .logo {
-  display: block;
+  display: grid;
   margin: 0 auto 2rem;
 }
 
 @media (min-width: 1024px) {
   header {
-    display: flex;
+    display: grid;
   }
 
   .logo {
@@ -62,7 +62,13 @@ header {
   }
 
   header .wrapper {
-    display: flex;
+    /* display: grid; */
   }
 }
+
+.greetings {
+  margin-bottom: 2%;
+}
+
+
 </style>
